@@ -4,22 +4,27 @@ import './App.css';
 import Home from './pages/home.jsx';
 import ProductDetails from './pages/ProductDetails';
 // import Home from '/xampp/htdocs/e-commerce-shanti/src/pages/home.php'
+import Teste from './pages/Teste';
+
 
 function App() {
-  
+
   return (
     <Router>
       <div>
-      {/* <Header /> */}
+        {/* <Header /> */}
         <div style={{ marginTop: '160px' }}>
           <Routes>
             {/* <Route path="/" exact element={<Menu />} /> */}
-            <Route exact path="/" element={<Home />} />          
-            <Route path="/product/:id" element={<ProductDetails />} />          
+            <Route exact path="/" element={<Home />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
+
+            <Route exact path="/Teste" element={<Teste />} />
+
           </Routes>
         </div>
         {/* <Footer /> */}
-        </div>
+      </div>
     </Router>
   );
 }
