@@ -1,0 +1,24 @@
+.header {
+    color: #fff;
+    background-color: #279A9D;
+}
+
+.search-input-container {
+    position: relative;
+  }
+  
+  .search-input {
+    padding-left: 30px; /* Ajuste o valor conforme necessário para posicionar o ícone corretamente */
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Ajuste o valor conforme necessário para posicionar o ícone corretamente */
+    transform: translateY(-50%);
+    color: #888; /* Cor do ícone da lupa */
+  }
+  
+  .logo-header{
+    width: 100px;
+  }
