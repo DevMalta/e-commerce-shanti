@@ -1,14 +1,16 @@
 .header {
     color: #fff;
     background-color: #279A9D;
+    padding-top: 5px;
 }
+
 
 .search-input-container {
     position: relative;
   }
   
   .search-input {
-    padding-left: 30px; /* Ajuste o valor conforme necessário para posicionar o ícone corretamente */
+    padding-left:0; /* Ajuste o valor conforme necessário para posicionar o ícone corretamente */
   }
   
   .search-icon {
@@ -20,5 +22,21 @@
   }
   
   .logo-header{
-    width: 100px;
+    width: 80px;
   }
+
+.container-1{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-group{
+    width: auto;
+}
+
+.search-input-container{
+  max-width: 440px;
+  width: auto;
+}
