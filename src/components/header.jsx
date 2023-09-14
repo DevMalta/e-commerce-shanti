@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faComments, faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import Logo from '../images/logo-quad.jpg'; // Importe a imagem sem chaves
+import Logo from '../images/logo-quad.jpg';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/header.css';
 
 function Header() {
-  const handleClick = () => {
-    // Adicione a lógica que deseja executar quando o ícone é clicado aqui
-    alert('Ícone clicado!');
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
   };
 
   return (
@@ -26,7 +26,7 @@ function Header() {
             <form className="" role="search">
               <div className="search-input-container">
                 <input type="search" className="js-search-input form-control search-input" placeholder=" " aria-label="O que você está buscando?" />
-                <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" onClick={handleClick} style={{ cursor: 'pointer' }} />
+                <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" onClick={toggleDropdown} style={{ cursor: 'pointer' }} />
               </div>
             </form>
           </div>
@@ -50,65 +50,49 @@ function Header() {
                 </Link>
                 Carrinho
               </li>
-
             </ul>
           </div>
         </div>
         <div className="container-2">
+          <nav className="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Eleventh navbar example">
+            <div className="container-fluid">
+              <Link to="/" className="navbar-brand">Shanti</Link>
+              <button className="navbar-toggler" type="button" onClick={toggleDropdown} aria-controls="navbarsExample09" aria-expanded={showDropdown} aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
 
-
-          <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-            <li>
-              <Link to="/" className="nav-link text-secondary">
-                <svg className="bi d-block mx-auto mb-1" width="24" height="24">
-                  <use xlinkHref="#home" />
-                </svg>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/dashboard" className="nav-link text-white">
-                <svg className="bi d-block mx-auto mb-1" width="24" height="24">
-                  <use xlinkHref="#speedometer2" />
-                </svg>
-                Dashboard
-              </Link>
-            </li>
-            <li>
-              <Link to="/orders" className="nav-link text-white">
-                <svg className="bi d-block mx-auto mb-1" width="24" height="24">
-                  <use xlinkHref="#table" />
-                </svg>
-                Orders
-              </Link>
-            </li>
-            <li>
-              <Link to="/products" className="nav-link text-white">
-                <svg className="bi d-block mx-auto mb-1" width="24" height="24">
-                  <use xlinkHref="#grid" />
-                </svg>
-                Products
-              </Link>
-            </li>
-            <li>
-              <Link to="/customers" className="nav-link text-white">
-                <svg className="bi d-block mx-auto mb-1" width="24" height="24">
-                  <use xlinkHref="#people-circle" />
-                </svg>
-                Customers
-              </Link>
-            </li>
-          </ul>
+              <div className={`collapse navbar-collapse ${showDropdown ? 'show' : ''}`} id="navbarsExample09">
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link active" aria-current="page">Home</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/link" className="nav-link">Link</Link>
+                  </li>
+                  <li className="nav-item">
+                    <span className="nav-link disabled" aria-disabled="true">Disabled</span>
+                  </li>
+                  <li className="nav-item dropdown">
+                    <span className="nav-link dropdown-toggle" onClick={toggleDropdown} id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded={showDropdown}>
+                      Dropdown
+                    </span>
+                    <ul className={`dropdown-menu ${showDropdown ? 'show' : ''}`} aria-labelledby="navbarDropdown">
+                      <li><span className="dropdown-item">Action</span></li>
+                      <li><span className="dropdown-item">Another action</span></li>
+                      <li><span className="dropdown-item">Something else here</span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form role="search">
+                  <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
+                </form>
+              </div>
+            </div>
+          </nav>
         </div>
       </div>
-
-
     </div>
   );
 }
 
 export default Header;
-
-
-
-
