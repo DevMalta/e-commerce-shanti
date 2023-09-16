@@ -25,7 +25,7 @@ function Header() {
           <div className="form-group">
             <form className="" role="search">
               <div className="search-input-container">
-                <input type="search" className="js-search-input form-control search-input" placeholder=" " aria-label="O que você está buscando?" />
+                <input type="search" className="js-search-input form-control search-input" placeholder="" aria-label="O que você está buscando?" />
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" onClick={toggleDropdown} style={{ cursor: 'pointer' }} />
               </div>
             </form>
@@ -83,9 +83,9 @@ function Header() {
                     </ul>
                   </li>
                 </ul>
-                <form role="search">
-                  <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
-                </form>
+                {/* <form role="search">
+                  <input className="form-control" type="search" placeholder="Search" aria-label="Search" /> */}
+                {/* </form> */}
               </div>
             </div>
           </nav>

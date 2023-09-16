@@ -17,7 +17,7 @@
   .search-icon {
     position: absolute;
     top: 50%;
-    left: 10px; /* Ajuste o valor conforme necessário para posicionar o ícone corretamente */
+    right: 10px; /* Ajuste o valor conforme necessário para posicionar o ícone corretamente */
     transform: translateY(-50%);
     color: #888; /* Cor do ícone da lupa */
   }
@@ -34,13 +34,44 @@
 }
 
 .form-group{
-    width: auto;
+    width: 550px;
 }
 
 .search-input-container{
-  max-width: 440px;
+  max-width: 740px;
   width: auto;
 }
 .container-2{
   padding-bottom: 10px;
+}
+
+.text-end{
+  text-align: center;
+}
+.text-end li{
+  margin-right: 20x;
+  margin-left: 20px;
+}
+
+@media (max-width: 990px){
+  .container-1{
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-header{
+    margin-right: 30px;
+  }
+}
+
+
+@media (max-width: 768px){
+  .container-1{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-group{
+    width: 100%;
+  }
 }
